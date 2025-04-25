@@ -1,7 +1,5 @@
 <?php
-$equation = "X + 67 = 129";
-
-$equation = str_replace(' ', '', $equation);
+$equation = "X+67=129";
 
 [$left, $right] = explode('=', $equation);
 
