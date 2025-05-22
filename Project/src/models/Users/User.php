@@ -1,4 +1,7 @@
 <?php
+
+namespace src\Models\Users;
+
 class User{
     protected $name;
 
