@@ -49,15 +49,15 @@ function showContacts($sort = 'created', $pageNum = 1) {
     while ($row = $result->fetch_assoc()) {
         $id = $row['id'];
         $html .= "<tr>";
-        $html .= "<td>" . htmlspecialchars($row['lastname']) . "</td>";
-        $html .= "<td>" . htmlspecialchars($row['firstname']) . "</td>";
-        $html .= "<td>" . htmlspecialchars($row['patronymic']) . "</td>";
-        $html .= "<td>" . htmlspecialchars($row['gender']) . "</td>";
-        $html .= "<td>" . htmlspecialchars($row['birthdate']) . "</td>";
-        $html .= "<td>" . htmlspecialchars($row['phone']) . "</td>";
-        $html .= "<td>" . htmlspecialchars($row['address']) . "</td>";
-        $html .= "<td>" . htmlspecialchars($row['email']) . "</td>";
-        $html .= "<td>" . htmlspecialchars($row['comment']) . "</td>";
+        $html .= "<td>" . htmlspecialchars($row['lastname'] ?? '') . "</td>";
+        $html .= "<td>" . htmlspecialchars($row['firstname'] ?? '') . "</td>";
+        $html .= "<td>" . htmlspecialchars($row['patronymic'] ?? '') . "</td>";
+        $html .= "<td>" . htmlspecialchars($row['gender'] ?? '') . "</td>";
+        $html .= "<td>" . htmlspecialchars($row['birthdate'] ?? '') . "</td>";
+        $html .= "<td>" . htmlspecialchars($row['phone'] ?? '') . "</td>";
+        $html .= "<td>" . htmlspecialchars($row['address'] ?? '') . "</td>";
+        $html .= "<td>" . htmlspecialchars($row['email'] ?? '') . "</td>";
+        $html .= "<td>" . htmlspecialchars($row['comment'] ?? '') . "</td>";
         $html .= "<td>
             <a href='?page=edit&id={$row['id']}'>Редактировать</a> | 
             <a href='?page=delete&id={$row['id']}' onclick=\"return confirm('Удалить запись {$row['lastname']} {$row['firstname']}?');\">Удалить</a>
